@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Films", "Films\Films.csproj", "{25CA01D5-3FBE-4BE1-A7E4-A13F419B28BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kernel", "Kernel", "{018523DC-6A9F-4167-9F66-BAA5CE0F95AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Context", "Kernel\Context\Context.csproj", "{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers", "Kernel\Managers\Managers.csproj", "{80CEE2B4-8307-4AB9-9C89-E95A360F4093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25CA01D5-3FBE-4BE1-A7E4-A13F419B28BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25CA01D5-3FBE-4BE1-A7E4-A13F419B28BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25CA01D5-3FBE-4BE1-A7E4-A13F419B28BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25CA01D5-3FBE-4BE1-A7E4-A13F419B28BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E} = {018523DC-6A9F-4167-9F66-BAA5CE0F95AC}
+		{80CEE2B4-8307-4AB9-9C89-E95A360F4093} = {018523DC-6A9F-4167-9F66-BAA5CE0F95AC}
+	EndGlobalSection
+EndGlobal
