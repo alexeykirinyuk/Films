@@ -7,8 +7,8 @@
     <ProjectGuid>{80CEE2B4-8307-4AB9-9C89-E95A360F4093}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Managers</RootNamespace>
-    <AssemblyName>Managers</AssemblyName>
+    <RootNamespace>Films.Kernel.Managers</RootNamespace>
+    <AssemblyName>Films.Kernel.Managers</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
