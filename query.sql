@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[Films] (
     [IssueDate]          DATETIME       NOT NULL,
     [Country]            NVARCHAR (MAX) NULL,
     [Genre]              NVARCHAR (MAX) NULL,
-    [Duration]           INT            NOT NULL CHECK [Duration] > 0,
+    [Duration]           INT            NOT NULL CHECK ([Duration] >= 0),
     CONSTRAINT [PK_dbo.Films] PRIMARY KEY CLUSTERED ([Id] ASC),
 );
 

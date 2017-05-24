@@ -40,10 +40,11 @@ namespace Films.Kernel.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Actor> Actors { get; set; }
+        public IEnumerable<long> ActorIds { get; set; }
 
         public void ClearActors()
         {
-            Actors = new HashSet<Actor>();
+            Actors.Clear();
         }
 
         public void Update(Film film)

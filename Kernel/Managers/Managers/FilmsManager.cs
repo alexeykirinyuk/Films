@@ -33,7 +33,7 @@ namespace Films.Kernel.Managers.Managers
         {
             return _storage.WOperation(Tag, $"Add film '{film.Name}'", (context) =>
             {
-                UpdateActors(context, film, film.Actors);
+                UpdateActors(context, film, film.Actors.ToList());
 
                 return context.Films.Add(film);
             });

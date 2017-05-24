@@ -1,2 +1,51 @@
-﻿@model Films.Kernel.Context.Film
+﻿@model IEnumerable<Films.Kernel.Context.Film>
 
+<div>
+    <div class="col-lg-3">
+        <button class="btn-success form-control" onclick="hrefFilm('Create')">Create New</button>
+    </div>
+    <div class="col-lg-3">
+        <button class="btn-warning form-control" onclick="hrefStart()">Tables</button>
+    </div>
+</div><br /><br />
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Issue date</th>
+        <th>Country</th>
+        <th>Genre</th>
+        <th>Duration</th>
+        <th>Actors</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>@item.IssueDate</td>
+        <td>@item.Country</td>
+        <td>@item.Genre</td>
+        <td>@item.Duration</td>
+        <td>
+            @foreach (var actor in item.Actors)
+            {
+                @actor<br>
+            }
+        </td>
+        <td>
+            <button class="btn-info form-control" onclick="hrefFilm('Details', @item.Id)">Details</button>
+        </td>
+        <td>
+            <button class="btn-warning form-control" onclick="hrefFilm('Edit', @item.Id)">Edit</button>
+        </td>
+        <td>
+            <button class="btn-danger form-control" onclick="hrefFilm('Remove', @item.Id)">Remove</button>
+        </td>
+    </tr>
+}
+</table>

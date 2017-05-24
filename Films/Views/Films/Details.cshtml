@@ -1,0 +1,39 @@
+﻿@model Films.Kernel.Context.Film
+
+<div>
+    <h4>Film</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>@Model.Name</dd>
+
+        <dt>IssueDate</dt>
+        <dd>@Model.IssueDate</dd>
+
+        <dt>Country</dt>
+        <dd>@Model.Country</dd>
+
+        <dt>Genre</dt>
+        <dd>@Model.Genre</dd>
+
+        <dt>Duration</dt>
+        <dd>@Model.Duration</dd>
+
+        <dt>Actors</dt>
+        <dd>
+            @foreach (var actor in Model.Actors)
+            {
+                @actor<br>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="col-lg-3">
+        <button class="btn-warning form-control" onclick="hrefFilm('Edit', @Model.Id)">Edit</button>
+    </div>
+
+    <div class="col-lg-3">
+        <button class="btn-success form-control" onclick="hrefFilm('Index')">Back</button>
+    </div>
+</div>

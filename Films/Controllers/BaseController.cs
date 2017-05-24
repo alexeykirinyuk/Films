@@ -26,7 +26,7 @@ namespace Films.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return WViewRequest($"Get all elements.", () =>
             {
@@ -35,19 +35,19 @@ namespace Films.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return WViewRequest($"Create new element.", () =>
             {
                 var element = new TDataType();
                 element = _manager.Add(element);
 
-                return View(element);
+                return View("Edit", element);
             });
         }
 
         [HttpGet]
-        public ActionResult Edit(long id)
+        public virtual ActionResult Edit(long id)
         {
             return WViewRequest($"Edit element #{id}.", () =>
             {
@@ -58,7 +58,7 @@ namespace Films.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult Details(long id)
+        public virtual ActionResult Details(long id)
         {
             return WViewRequest($"Details for element #{id}.", () =>
             {
@@ -69,7 +69,7 @@ namespace Films.Server.Controllers
         }
 
         [HttpGet]
-        public ActionResult Remove(long id)
+        public virtual ActionResult Remove(long id)
         {
             return WViewRequest($"Remove element #{id}", () =>
             {
@@ -78,8 +78,8 @@ namespace Films.Server.Controllers
                 return RedirectIndex();
             });
         }
-        [HttpGet]
-        public ActionResult Update(TDataType element)
+        [HttpPost]
+        public virtual ActionResult Update(TDataType element)
         {
             return WViewRequest($"Update element #{element.Id}", () =>
             {
@@ -103,7 +103,14 @@ namespace Films.Server.Controllers
         }
         protected ActionResult WViewRequest(string message, Func<ActionResult> action)
         {
-            var result = default(ActionResult);
+            return WRequest<ActionResult>(message, action, (_) =>
+            {
+                return RedirectToAction("NotFound");
+            });
+        }
+        protected TResult WRequest<TResult>(string message, Func<TResult> action, Func<Exception, TResult> error)
+        {
+            var result = default(TResult);
 
             try
             {
@@ -115,7 +122,7 @@ namespace Films.Server.Controllers
             {
                 _log.Error(Tag, exception);
 
-                return RedirectToAction("NotFound");
+                return error(exception);
             }
 
             return result;

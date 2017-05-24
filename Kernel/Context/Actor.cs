@@ -51,5 +51,9 @@ namespace Films.Kernel.Context
             MiddleName = actor.MiddleName;
             Birth = actor.Birth;
         }
+        public override string ToString()
+        {
+            return $"{LastName} {FirstName} {MiddleName}";
+        }
     }
 }

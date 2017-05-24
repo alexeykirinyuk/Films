@@ -1,0 +1,72 @@
+﻿@model Films.Kernel.Context.Film
+@using Films.Kernel.Context
+
+@using (Html.BeginForm("Update", "Films", new { Id = Model.Id }, FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <h4>Film</h4>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Name">Name</label>
+            <div class="col-md-10">
+                <input name="Name" class="form-control" type="text" value="@Model.Name" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IssueDate">Issue date</label>
+            <div class="col-md-10">
+                <input name="IssueDate" class="form-control" type="date" value="@Model.IssueDate" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Country">Country</label>
+            <div class="col-md-10">
+                <input name="Country" class="form-control" type="text" value="@Model.Country" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Genre">Genre</label>
+            <div class="col-md-10">
+                <input name="Genre" class="form-control" type="text" value="@Model.Genre" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Duration">Duration</label>
+            <div class="col-md-10">
+                <input name="Duration" class="form-control" type="number" value="@Model.Duration" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Actors">Actors</label>
+            <div class="col-md-10">
+                @foreach (var actor in ViewBag.AllActors as IEnumerable<Actor>)
+                {
+                    if (null != Model.Actors.FirstOrDefault(a => a.Id == actor.Id))
+                    {
+                        <label><input type="checkbox" name="ActorIds" value="@actor.Id" checked>@actor<br></label>
+                    }
+                    else
+                    {
+                        <label><input type="checkbox" name="ActorIds" value="@actor.Id">@actor<br></label>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-2">
+                <button class="btn-success form-control" type="submit">Save</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="form-group col-md-2">
+    <button class="btn-warning form-control" onclick="hrefFilm('Index')">Save</button>
+</div>
