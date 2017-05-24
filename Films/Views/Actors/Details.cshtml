@@ -25,7 +25,12 @@
         </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <div class="col-lg-3">
+        <button class="btn-warning form-control" onclick="hrefActor('Edit', @Model.Id)">Edit</button>
+    </div>
+
+    <div class="col-lg-3">
+        <button class="btn-success form-control" onclick="hrefActor('Index')">Back</button>
+    </div>
+</div>

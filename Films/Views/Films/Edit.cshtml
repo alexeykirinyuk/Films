@@ -16,7 +16,7 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="IssueDate">Issue date</label>
             <div class="col-md-10">
-                <input name="IssueDate" class="form-control" type="date" value="@Model.IssueDate" required/>
+                <input name="IssueDate" class="form-control" type="date" value="@Model.IssueDate.ToString("yyyy-MM-dd")" required/>
             </div>
         </div>
 
@@ -60,10 +60,10 @@
         </div>
 
         <div>
-            <div class="form-group col-md-1">
+            <div class="col-md-1">
                 <button class="btn-success form-control" type="submit">Save</button>
             </div>
-            <div class="form-group col-md-1">
+            <div class="col-md-1">
                 <button class="btn-warning form-control" onclick="hrefFilm('Index')">Cancel</button>
             </div>
         </div>
