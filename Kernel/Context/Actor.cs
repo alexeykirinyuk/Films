@@ -12,7 +12,7 @@ namespace Films.Kernel.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Actor
+    public partial class Actor : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Actor()
@@ -31,7 +31,6 @@ namespace Films.Kernel.Context
             Birth = birth;
         }
 
-        public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
@@ -39,5 +38,18 @@ namespace Films.Kernel.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film> Films { get; set; }
+
+        public void ClearFilms()
+        {
+            Films = new HashSet<Film>();
+        }
+
+        public void Update(Actor actor)
+        {
+            FirstName = actor.FirstName;
+            LastName = actor.LastName;
+            MiddleName = actor.MiddleName;
+            Birth = actor.Birth;
+        }
     }
 }

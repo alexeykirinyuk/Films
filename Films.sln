@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Context", "Kernel\Context\C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers", "Kernel\Managers\Managers.csproj", "{80CEE2B4-8307-4AB9-9C89-E95A360F4093}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Managers.Tests", "Kernel\Managers.Tests\Managers.Tests.csproj", "{A9389A00-06B8-438F-A67E-F2C3047FBAA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80CEE2B4-8307-4AB9-9C89-E95A360F4093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9389A00-06B8-438F-A67E-F2C3047FBAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9389A00-06B8-438F-A67E-F2C3047FBAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9389A00-06B8-438F-A67E-F2C3047FBAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9389A00-06B8-438F-A67E-F2C3047FBAA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +42,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{71AB4D38-B2D7-4FED-A2B2-4B88C7AF0F5E} = {018523DC-6A9F-4167-9F66-BAA5CE0F95AC}
 		{80CEE2B4-8307-4AB9-9C89-E95A360F4093} = {018523DC-6A9F-4167-9F66-BAA5CE0F95AC}
+		{A9389A00-06B8-438F-A67E-F2C3047FBAA1} = {018523DC-6A9F-4167-9F66-BAA5CE0F95AC}
 	EndGlobalSection
 EndGlobal

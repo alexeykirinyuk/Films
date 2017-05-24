@@ -52,6 +52,7 @@
     <Compile Include="Actor.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="BaseModel.cs" />
     <Compile Include="Film.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>

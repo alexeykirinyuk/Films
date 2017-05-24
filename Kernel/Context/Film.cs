@@ -12,7 +12,7 @@ namespace Films.Kernel.Context
     using System;
     using System.Collections.Generic;
     
-    public partial class Film
+    public partial class Film : BaseModel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Film()
@@ -31,8 +31,7 @@ namespace Films.Kernel.Context
             Country = country;
             Duration = duration;
         }
-    
-        public long Id { get; set; }
+
         public string Name { get; set; }
         public DateTime IssueDate { get; set; }
         public string Country { get; set; }
@@ -41,5 +40,19 @@ namespace Films.Kernel.Context
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Actor> Actors { get; set; }
+
+        public void ClearActors()
+        {
+            Actors = new HashSet<Actor>();
+        }
+
+        public void Update(Film film)
+        {
+            Name = film.Name;
+            IssueDate = film.IssueDate;
+            Country = film.Country;
+            Genre = film.Genre;
+            Duration = film.Duration;
+        }
     }
 }
