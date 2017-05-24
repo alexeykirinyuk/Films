@@ -30,3 +30,34 @@ function hrefActor(action, id)
 {
     hrefAction("Actors", action, id);
 }
+
+function search(count)
+{
+    var search = document.getElementById("search").value.toUpperCase();
+    var tr = document.getElementById("table").getElementsByTagName("tr");
+
+    for (var i = 0; i < tr.length; i++)
+    {
+        var td = tr[i].getElementsByTagName("td")[0];
+
+        if (td)
+        {
+            var show = false;
+
+            for (var j = 0; j < count; j++)
+            {
+                td = tr[i].getElementsByTagName("td")[j];
+                show |= (td.innerHTML.toUpperCase().indexOf(search) > -1);
+            }
+
+            if (show)
+            {
+                tr[i].style.display = "";
+            }
+            else
+            {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}

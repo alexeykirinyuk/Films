@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<Films.Kernel.Context.Actor>
 
 <div>
+    <div class="col-md-10">
+        <input class="form-control" id="search" onkeyup="search(7)" type="text" placeholder="Search" />
+    </div>
     <div class="col-md-1">
         <button class="btn-success form-control" onclick="hrefActor('Create')">Create New</button>
     </div>
@@ -9,7 +12,7 @@
     </div>
 </div><br /><br />
 
-<table class="table">
+<table class="table" id="table">
     <tr>
         <th>Id</th>
         <th>FirstName</th>

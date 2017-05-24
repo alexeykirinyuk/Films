@@ -1,15 +1,17 @@
 ﻿@model IEnumerable<Films.Kernel.Context.Film>
 
 <div>
+    <div class="col-md-10">
+        <input class="form-control" id="search" onkeyup="search(7)" type="text" placeholder="Search" />
+    </div>
     <div class="col-md-1">
         <button class="btn-success form-control" onclick="hrefFilm('Create')">Create New</button>
     </div>
     <div class="col-md-1">
         <button class="btn-warning form-control" onclick="hrefStart()">Tables</button>
     </div>
-</div><br /><br />
-
-<table class="table">
+</div><br /><br /><br />
+<table class="table" id="films">
     <tr>
         <th>Id</th>
         <th>Name</th>
