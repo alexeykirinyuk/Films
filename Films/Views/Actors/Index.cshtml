@@ -1,8 +1,14 @@
 ﻿@model IEnumerable<Films.Kernel.Context.Actor>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div>
+    <div class="col-md-1">
+        <button class="btn-success form-control" onclick="hrefActor('Create')">Create New</button>
+    </div>
+    <div class="col-md-1">
+        <button class="btn-warning form-control" onclick="hrefStart()">Tables</button>
+    </div>
+</div><br /><br />
+
 <table class="table">
     <tr>
         <th>Id</th>
@@ -11,13 +17,15 @@
         <th>MiddleName</th>
         <th>Birth</th>
         <th>Films</th>
-        <th></th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>@item.FirstName</td>
         <td>@item.Id</td>
+        <td>@item.FirstName</td>
         <td>@item.LastName</td>
         <td>@item.MiddleName</td>
         <td>@item.Birth</td>

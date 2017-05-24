@@ -1,0 +1,31 @@
+﻿@model Films.Kernel.Context.Actor
+
+<div>
+    <h4>Actor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>FirstName</dt>
+        <dd>@Model.FirstName</dd>
+
+        <dt>LastName</dt>
+        <dd>@Model.LastName</dd>
+
+        <dt>MiddleName</dt>
+        <dd>@Model.MiddleName</dd>
+
+        <dt>Birth</dt>
+        <dd>@Model.Birth</dd>
+
+        <dt>Films</dt>
+        <dd>
+            @foreach (var film in Model.Films)
+            {
+                @film<br>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

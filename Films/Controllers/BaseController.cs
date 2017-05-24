@@ -40,7 +40,6 @@ namespace Films.Server.Controllers
             return WViewRequest($"Create new element.", () =>
             {
                 var element = new TDataType();
-                element = _manager.Add(element);
 
                 return View("Edit", element);
             });
@@ -83,8 +82,17 @@ namespace Films.Server.Controllers
         {
             return WViewRequest($"Update element #{element.Id}", () =>
             {
-                Find("Update", element.Id);
-                _manager.Update(element);
+                var model = _manager.Find(element.Id);
+
+                if (null != model)
+                {
+                    _manager.Update(element);
+                }
+                else
+                {
+                    _manager.Add(element);
+                }
+
 
                 return RedirectIndex();
             });

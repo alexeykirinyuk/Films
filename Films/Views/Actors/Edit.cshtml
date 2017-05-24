@@ -1,0 +1,48 @@
+﻿@model Films.Kernel.Context.Actor
+
+@using (Html.BeginForm("Update", "Actors", new { Id = Model.Id }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Actor</h4>
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="FirstName">First name</label>
+            <div class="col-md-10">
+                <input name="FirstName" class="form-control" type="text" value="@Model.FirstName" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LastName">Last name</label>
+            <div class="col-md-10">
+                <input name="LastName" class="form-control" type="text" value="@Model.LastName" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MiddleName">Middle name</label>
+            <div class="col-md-10">
+                <input name="MiddleName" class="form-control" type="text" value="@Model.MiddleName" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Birth">Birthday</label>
+            <div class="col-md-10">
+                <input name="Birth" class="form-control" type="date" value="@Model.Birth" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-1">
+                <button class="btn-success form-control" type="submit">Save</button>
+            </div>
+            <div class="form-group col-md-1">
+                <button class="btn-warning form-control" onclick="hrefActor('Index')">Cancel</button>
+            </div>
+        </div>
+    </div>
+}

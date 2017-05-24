@@ -9,35 +9,35 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Name">Name</label>
             <div class="col-md-10">
-                <input name="Name" class="form-control" type="text" value="@Model.Name" />
+                <input name="Name" class="form-control" type="text" value="@Model.Name" required/>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2" for="IssueDate">Issue date</label>
             <div class="col-md-10">
-                <input name="IssueDate" class="form-control" type="date" value="@Model.IssueDate" />
+                <input name="IssueDate" class="form-control" type="date" value="@Model.IssueDate" required/>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2" for="Country">Country</label>
             <div class="col-md-10">
-                <input name="Country" class="form-control" type="text" value="@Model.Country" />
+                <input name="Country" class="form-control" type="text" value="@Model.Country" required/>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2" for="Genre">Genre</label>
             <div class="col-md-10">
-                <input name="Genre" class="form-control" type="text" value="@Model.Genre" />
+                <input name="Genre" class="form-control" type="text" value="@Model.Genre" required/>
             </div>
         </div>
 
         <div class="form-group">
             <label class="control-label col-md-2" for="Duration">Duration</label>
             <div class="col-md-10">
-                <input name="Duration" class="form-control" type="number" value="@Model.Duration" />
+                <input name="Duration" class="form-control"  type="number" min="0"value="@Model.Duration" required/>
             </div>
         </div>
 
@@ -59,14 +59,13 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="form-group col-md-2">
+        <div>
+            <div class="form-group col-md-1">
                 <button class="btn-success form-control" type="submit">Save</button>
+            </div>
+            <div class="form-group col-md-1">
+                <button class="btn-warning form-control" onclick="hrefFilm('Index')">Cancel</button>
             </div>
         </div>
     </div>
 }
-
-<div class="form-group col-md-2">
-    <button class="btn-warning form-control" onclick="hrefFilm('Index')">Save</button>
-</div>

@@ -55,5 +55,9 @@ namespace Films.Kernel.Context
             Genre = film.Genre;
             Duration = film.Duration;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
