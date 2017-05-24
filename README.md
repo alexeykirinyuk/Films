@@ -1,3 +1,3 @@
-# Films documentation
+# Films
 
- Path: Documentation.pdf
+Краткое функциональное описание и порядок развёртывания находится в файле `Documentation.pdf`.
